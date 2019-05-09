@@ -21,17 +21,17 @@ public class CoffeeResource {
 	@Inject
 	private CoffeeManagementServiceLocal service;
 	
-//	@GET
-//	@Produces({"application/JSON", "application/XML"})
-//	public List<Coffee> getAllEmployees() {
-//		return service.getAllCoffee();
-//	}
-	
 	@GET
-	@Produces("text/plain")
-	public String testGet() {
-		return "It works!";
+	@Produces("application/JSON")
+	public List<Coffee> getAllEmployees() {
+		return service.getAllCoffee();
 	}
+	
+//	@GET
+//	@Produces("text/plain")
+//	public String testGet() {
+//		return "It works!";
+//	}
 	
 	@POST
 	@Produces("application/JSON")
