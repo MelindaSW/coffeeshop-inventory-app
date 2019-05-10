@@ -18,6 +18,8 @@ import com.cbt.coffeemanagement.dataaccess.CoffeeNotFoundException;
 import com.cbt.coffeemanagement.domain.Coffee;
 import com.cbt.coffeemanagement.service.CoffeeManagementServiceLocal;
 
+
+
 @Stateless
 @Path("/cbt")
 public class CoffeeResource {
