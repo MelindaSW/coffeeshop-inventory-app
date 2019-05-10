@@ -11,9 +11,12 @@ public interface CoffeeDataAccess {
 	
 	public void insert(Coffee coffee);
 	
-	public List<Coffee> getAllCoffee();
+	public List<Coffee> getAllCoffee() throws CoffeeNotFoundException;
 	
+	public List<Coffee> getCoffeeByName(String productName) throws CoffeeNotFoundException;
+
 	public void removeCoffee(int id);
 	
-	public void editCoffee(int id);
+	public void updateCoffee(int id);
+
 }

@@ -3,6 +3,7 @@
 /Users/sebastiankihlstrand/Projects/School/coffeeshop-inventory-app/serverside/src/main/java/com/cbt/coffeemanagement/service/CoffeeManagementServiceLocal.java
 /Users/sebastiankihlstrand/Projects/School/coffeeshop-inventory-app/serverside/src/main/java/com/cbt/coffeemanagement/dataaccess/CoffeeDataAccess.java
 /Users/sebastiankihlstrand/Projects/School/coffeeshop-inventory-app/serverside/src/main/java/com/cbt/coffeemanagement/rest/JAXRSConfiguration.java
+/Users/sebastiankihlstrand/Projects/School/coffeeshop-inventory-app/serverside/src/main/java/com/cbt/coffeemanagement/dataaccess/CoffeeNotFoundException.java
 /Users/sebastiankihlstrand/Projects/School/coffeeshop-inventory-app/serverside/src/main/java/com/cbt/coffeemanagement/domain/Coffee.java
 /Users/sebastiankihlstrand/Projects/School/coffeeshop-inventory-app/serverside/src/main/java/com/cbt/coffeemanagement/service/CoffeeManagementImplementation.java
 /Users/sebastiankihlstrand/Projects/School/coffeeshop-inventory-app/serverside/src/main/java/com/cbt/coffeemanagement/service/CoffeeManagementService.java

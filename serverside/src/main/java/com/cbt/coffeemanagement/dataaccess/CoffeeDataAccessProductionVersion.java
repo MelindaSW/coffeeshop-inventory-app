@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -18,16 +19,30 @@ public class CoffeeDataAccessProductionVersion implements CoffeeDataAccess {
 	@Override
 	public void insert(Coffee newCoffee) {
 		em.persist(newCoffee);
-
 	}
 
 	@Override
-	public List<Coffee> getAllCoffee() {
+	public List<Coffee> getAllCoffee() throws CoffeeNotFoundException {
 		Query q = em.createQuery("select coffee from Coffee coffee");
-		List<Coffee> coffee = q.getResultList();
-		return coffee;
+		try { 
+			return q.getResultList();
+		} catch (NoResultException e) {
+			throw new CoffeeNotFoundException();
+		}
 	}
 
+	@Override
+	public List<Coffee> getCoffeeByName(String productName) throws CoffeeNotFoundException {
+		String wildcard = "%" + productName + "%";
+		Query q = em.createQuery("select coffee from Coffee coffee where productName like :productName");
+		q.setParameter("productName", wildcard);
+		try {
+			return q.getResultList();
+		} catch (NoResultException e) {
+			throw new CoffeeNotFoundException();
+		}
+	}
+	
 	@Override
 	public void removeCoffee(int id) {
 		// TODO Auto-generated method stub
@@ -35,9 +50,10 @@ public class CoffeeDataAccessProductionVersion implements CoffeeDataAccess {
 	}
 
 	@Override
-	public void editCoffee(int id) {
+	public void updateCoffee(int id) {
 		// TODO Auto-generated method stub
 
 	}
+
 
 }
