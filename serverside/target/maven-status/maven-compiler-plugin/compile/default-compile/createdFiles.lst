@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+=======
+com/cbt/coffeemanagement/rest/JAXRSConfiguration.class
+>>>>>>> 11cf57f4f152ed6aac9a1f51a3c69bcf14c90baa
+com/cbt/coffeemanagement/service/CoffeeManagementServiceLocal.class
+com/cbt/coffeemanagement/service/CoffeeManagementImplementation.class
+com/cbt/coffeemanagement/service/CoffeeManagementService.class
+com/cbt/coffeemanagement/dataaccess/CoffeeDataAccessProductionVersion.class
+com/cbt/coffeemanagement/rest/CoffeeResource.class
+com/cbt/coffeemanagement/domain/Coffee.class
+com/cbt/coffeemanagement/dataaccess/CoffeeDataAccess.class
