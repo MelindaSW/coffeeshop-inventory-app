@@ -1,9 +1,0 @@
-com/cbt/coffeemanagement/rest/JAXRSConfiguration.class
-com/cbt/coffeemanagement/service/CoffeeManagementServiceLocal.class
-com/cbt/coffeemanagement/service/CoffeeManagementImplementation.class
-com/cbt/coffeemanagement/service/CoffeeManagementService.class
-com/cbt/coffeemanagement/dataaccess/CoffeeDataAccessProductionVersion.class
-com/cbt/coffeemanagement/rest/CoffeeResource.class
-com/cbt/coffeemanagement/domain/Coffee.class
-com/cbt/coffeemanagement/dataaccess/CoffeeDataAccess.class
-com/cbt/coffeemanagement/dataaccess/CoffeeNotFoundException.class
