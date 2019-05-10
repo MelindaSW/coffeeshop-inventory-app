@@ -38,7 +38,7 @@ public class CoffeeResource {
 	@Consumes("application/JSON")
 	public Response createEmployee(Coffee newCoffee) {
 		try {
-			service.insert(newCoffee);;
+			service.insert(newCoffee);
 			return Response.status(201).build();
 		} catch (Exception e) {
 			e.printStackTrace();
