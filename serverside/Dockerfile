@@ -4,7 +4,7 @@ COPY ./postgresql-42.2.5.jar $JBOSS_HOME/modules/system/layers/base/org/postgres
 COPY ./module.xml $JBOSS_HOME/modules/system/layers/base/org/postgresql/main/
 
 RUN sh -c "$JBOSS_HOME/bin/standalone.sh &" && \
-    sleep 30 && \
+    sleep 45 && \
     $JBOSS_HOME/bin/jboss-cli.sh --connect --command="/subsystem=datasources/jdbc-driver=postgresql-driver:add(driver-class-name=org.postgresql.Driver, driver-module-name=org.postgresql, driver-name=postgresql-driver)" && \
     $JBOSS_HOME/bin/jboss-cli.sh --connect --command="data-source add --connection-url=jdbc:postgresql://postgres/ --driver-name=postgresql-driver --name=Database --jndi-name=java:/Database --user-name=postgres" && \
     $JBOSS_HOME/bin/jboss-cli.sh --connect --command=:shutdown
