@@ -18,7 +18,7 @@ public class Coffee {
 	private String brand;
 	@Column(length = 25)
 	private String roasting;
-	@Column(length = 25)
+	@Column(length = 255)
 	private String description;
 	private int price;
 	
