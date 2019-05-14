@@ -23,8 +23,10 @@ public class Coffee implements Serializable {
 	@Column(length = 255)
 	private String description;
 	private int price;
+	private int stockBalance;
 	
-	public Coffee(int id, String productName, String brand, String roasting, String description, int price) {
+	public Coffee(int id, String productName, String brand, String roasting, String description, int price,
+			int stockBalance) {
 		super();
 		this.id = id;
 		this.productName = productName;
@@ -32,8 +34,9 @@ public class Coffee implements Serializable {
 		this.roasting = roasting;
 		this.description = description;
 		this.price = price;
+		this.stockBalance = stockBalance;
 	}
-	
+
 	public Coffee() {
 		
 	}
@@ -85,5 +88,15 @@ public class Coffee implements Serializable {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+
+	public int getStockBalance() {
+		return stockBalance;
+	}
+
+	public void setStockBalance(int stockBalance) {
+		this.stockBalance = stockBalance;
+	}
+	
+	
 	
 }

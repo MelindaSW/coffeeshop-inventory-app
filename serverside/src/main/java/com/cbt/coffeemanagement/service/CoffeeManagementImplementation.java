@@ -10,7 +10,7 @@ import com.cbt.coffeemanagement.dataaccess.CoffeeNotFoundException;
 import com.cbt.coffeemanagement.domain.Coffee;
 
 @Stateless
-public class CoffeeManagementImplementation implements CoffeeManagementServiceLocal, CoffeeManagementService {
+public class CoffeeManagementImplementation implements CoffeeManagementServiceLocal {
 
 	@Inject
 	private CoffeeDataAccess dao;
