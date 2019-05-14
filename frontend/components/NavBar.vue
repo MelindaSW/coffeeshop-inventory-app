@@ -42,7 +42,7 @@ export default {}
 
 <style lang="css" scoped>
   img {
-    margin: 10px;
+    margin: 10px 20px 10px 30px;
   }
   router-link {
     color: #f5efeb;
@@ -57,9 +57,9 @@ export default {}
     font-size: 1.2rem;
   }
   #brand-header  {
-    color: black;
+    color: #f5efeb;
     font-weight: bold;
-
+    margin-right: 30px;
   }
   #brand-header:hover {
     color: black;
