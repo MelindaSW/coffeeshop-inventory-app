@@ -10,3 +10,5 @@ serverside/target/*
 .settings/
 .settings
 .DS_Store
+/serverside/database/
+/serverside/database/*
