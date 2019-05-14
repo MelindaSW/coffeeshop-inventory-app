@@ -11,6 +11,3 @@
 
 <style lang="css" scoped>
 </style>
-
-
-<!-- Navbar med länkar till -->
