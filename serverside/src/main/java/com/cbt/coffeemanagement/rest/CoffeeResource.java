@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -29,7 +30,7 @@ public class CoffeeResource {
 	
 	@GET
 	@Produces("application/JSON")
-	public Response getAllEmployees(@Context HttpHeaders headers) {
+	public Response getAllCoffee(@Context HttpHeaders headers) {
 		System.out.println(headers.getRequestHeaders());
 		try {
 			List<Coffee> result = service.getAllCoffee();
@@ -61,7 +62,7 @@ public class CoffeeResource {
 	@POST
 	@Produces("application/JSON")
 	@Consumes("application/JSON")
-	public Response createEmployee(Coffee newCoffee) {
+	public Response insert(Coffee newCoffee) {
 		try {
 			service.insert(newCoffee);
 			return Response.status(201).build();
@@ -69,5 +70,13 @@ public class CoffeeResource {
 			e.printStackTrace();
 			return Response.status(504).build();
 		}
+	}
+	
+	@DELETE
+	@Path("/delete/{id}")
+	public Response removeCoffee(@PathParam("id") int id, @Context HttpHeaders headers) {
+		System.out.println(headers.getRequestHeaders());
+		service.removeCoffee(id);
+		return Response.status(204).build();
 	}
 }

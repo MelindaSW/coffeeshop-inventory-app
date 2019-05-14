@@ -45,8 +45,9 @@ public class CoffeeDataAccessProductionVersion implements CoffeeDataAccess {
 	
 	@Override
 	public void removeCoffee(int id) {
-		// TODO Auto-generated method stub
-
+		Query q = em.createQuery("delete from Coffee coffee where id= :id");
+		q.setParameter("id", id);
+		q.executeUpdate();
 	}
 
 	@Override
