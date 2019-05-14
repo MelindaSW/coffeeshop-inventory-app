@@ -1,4 +1,5 @@
-# coffee bean therapy
+# Coffee Bean Therapy administration service
+
 Group project for Server programming course at YRGO
 
 Using Java EE JPA with REST for the server side.
