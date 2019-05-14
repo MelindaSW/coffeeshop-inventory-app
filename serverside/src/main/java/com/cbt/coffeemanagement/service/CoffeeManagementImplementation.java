@@ -32,12 +32,12 @@ public class CoffeeManagementImplementation implements CoffeeManagementServiceLo
 	}
 	
 	@Override
-	public void removeCoffee(int id) {
+	public void removeCoffee(int id) throws CoffeeNotFoundException {
 		dao.removeCoffee(id);
 	}
 
 	@Override
-	public void updateCoffee(int id, Coffee updatedCoffee) {
+	public void updateCoffee(int id, Coffee updatedCoffee) throws CoffeeNotFoundException {
 		dao.updateCoffee(id, updatedCoffee);
 	}
 

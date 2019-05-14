@@ -77,8 +77,13 @@ public class CoffeeResource {
 	@Path("/delete/{id}")
 	public Response removeCoffee(@PathParam("id") int id, @Context HttpHeaders headers) {
 		System.out.println(headers.getRequestHeaders());
-		service.removeCoffee(id);
-		return Response.status(204).build();
+		try {
+			service.removeCoffee(id);
+			return Response.status(204).build();
+		} catch (CoffeeNotFoundException e) {
+			//e.printStackTrace();
+			return Response.status(404).build();
+		}
 	}
 	
 	@PUT
@@ -86,7 +91,12 @@ public class CoffeeResource {
 	@Consumes("application/JSON")
 	public Response updateCoffee(@PathParam("id") int id, Coffee updatedCoffee, @Context HttpHeaders headers) {
 		System.out.println(headers.getRequestHeaders());
-		service.updateCoffee(id, updatedCoffee);
-		return Response.status(204).build();
+		try {
+			service.updateCoffee(id, updatedCoffee);
+			return Response.status(204).build();
+		} catch (CoffeeNotFoundException e) {
+			//e.printStackTrace();
+			return Response.status(404).build();
+		}
 	}
 }

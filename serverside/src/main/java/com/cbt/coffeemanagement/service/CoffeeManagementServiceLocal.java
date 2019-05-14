@@ -16,9 +16,9 @@ public void insert(Coffee coffee);
 
 	public List<Coffee> getCoffeeByName(String productName) throws CoffeeNotFoundException;
 	
-	public void removeCoffee(int id);
+	public void removeCoffee(int id) throws CoffeeNotFoundException;
 	
-	public void updateCoffee(int id, Coffee updatedCoffee);
+	public void updateCoffee(int id, Coffee updatedCoffee) throws CoffeeNotFoundException;
 
 
 }

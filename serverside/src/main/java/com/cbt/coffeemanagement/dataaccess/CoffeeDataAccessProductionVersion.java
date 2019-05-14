@@ -1,5 +1,6 @@
 package com.cbt.coffeemanagement.dataaccess;
 
+import java.sql.ResultSet;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -37,21 +38,35 @@ public class CoffeeDataAccessProductionVersion implements CoffeeDataAccess {
 		Query q = em.createQuery("SELECT coffee FROM Coffee coffee WHERE productName LIKE :productName");
 		q.setParameter("productName", wildcard);
 		try {
-			return q.getResultList();
-		} catch (NoResultException e) {
+			List<Coffee> result = q.getResultList();
+			if(result.size() < 1) {
+				throw new CoffeeNotFoundException();
+			} else {
+				return result;
+			}
+		} catch (Exception e) {
+			System.err.println(e);
 			throw new CoffeeNotFoundException();
 		}
 	}
 
 	@Override
-	public void removeCoffee(int id) {
+	public void removeCoffee(int id) throws CoffeeNotFoundException {
 		Query q = em.createQuery("DELETE FROM Coffee coffee WHERE id= :id");
 		q.setParameter("id", id);
-		q.executeUpdate();
+		try {
+			int nrOfDeletes = q.executeUpdate();
+			if(nrOfDeletes < 1) {
+				throw new CoffeeNotFoundException();
+			}
+		} catch (Exception e) {
+			System.err.println(e);
+			throw new CoffeeNotFoundException();
+		}
 	}
 
 	@Override
-	public void updateCoffee(int id, Coffee updatedCoffee) {
+	public void updateCoffee(int id, Coffee updatedCoffee) throws CoffeeNotFoundException {
 		Query q = em.createQuery("UPDATE Coffee SET productName= :productName, brand= :brand, roasting= :roasting, "
 				+ "description= :description, price= :price WHERE id= :id");
 		q.setParameter("id", id)
@@ -60,7 +75,15 @@ public class CoffeeDataAccessProductionVersion implements CoffeeDataAccess {
 		.setParameter("roasting", updatedCoffee.getRoasting())
 		.setParameter("description", updatedCoffee.getDescription())
 		.setParameter("price", updatedCoffee.getPrice());
-		q.executeUpdate();
+		try {
+			int nrOfUpdates = q.executeUpdate();
+			if(nrOfUpdates < 1) {
+				throw new CoffeeNotFoundException();
+			}
+		} catch (Exception e) {
+			System.err.println(e);
+			throw new CoffeeNotFoundException();
+		}
 	}
 
 }
