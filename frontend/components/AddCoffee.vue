@@ -1,6 +1,7 @@
 <template>
   <div class="columns is-centered">
      <div class="column is-one-third">
+        <h1 class="title">ADD A PRODUCT</h1>
        <div class="field">
          <label class="label">Name of product</label>
          <div class="control">
