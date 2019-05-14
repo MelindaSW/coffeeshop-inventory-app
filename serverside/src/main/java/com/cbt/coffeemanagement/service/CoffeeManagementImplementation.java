@@ -37,8 +37,8 @@ public class CoffeeManagementImplementation implements CoffeeManagementServiceLo
 	}
 
 	@Override
-	public void updateCoffee(int id) {
-		dao.updateCoffee(id);
+	public void updateCoffee(int id, Coffee updatedCoffee) {
+		dao.updateCoffee(id, updatedCoffee);
 	}
 
 

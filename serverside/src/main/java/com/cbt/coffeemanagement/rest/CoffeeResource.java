@@ -8,6 +8,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -77,6 +78,15 @@ public class CoffeeResource {
 	public Response removeCoffee(@PathParam("id") int id, @Context HttpHeaders headers) {
 		System.out.println(headers.getRequestHeaders());
 		service.removeCoffee(id);
+		return Response.status(204).build();
+	}
+	
+	@PUT
+	@Path("/update/{id}")
+	@Consumes("application/JSON")
+	public Response updateCoffee(@PathParam("id") int id, Coffee updatedCoffee, @Context HttpHeaders headers) {
+		System.out.println(headers.getRequestHeaders());
+		service.updateCoffee(id, updatedCoffee);
 		return Response.status(204).build();
 	}
 }

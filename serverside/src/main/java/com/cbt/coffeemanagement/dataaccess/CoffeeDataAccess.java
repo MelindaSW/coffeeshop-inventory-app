@@ -17,6 +17,6 @@ public interface CoffeeDataAccess {
 
 	public void removeCoffee(int id);
 	
-	public void updateCoffee(int id);
+	public void updateCoffee(int id, Coffee updatedCoffee);
 
 }

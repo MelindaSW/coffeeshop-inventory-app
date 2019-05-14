@@ -15,7 +15,7 @@ public class CoffeeDataAccessProductionVersion implements CoffeeDataAccess {
 
 	@PersistenceContext
 	private EntityManager em;
-	
+
 	@Override
 	public void insert(Coffee newCoffee) {
 		em.persist(newCoffee);
@@ -23,8 +23,8 @@ public class CoffeeDataAccessProductionVersion implements CoffeeDataAccess {
 
 	@Override
 	public List<Coffee> getAllCoffee() throws CoffeeNotFoundException {
-		Query q = em.createQuery("select coffee from Coffee coffee");
-		try { 
+		Query q = em.createQuery("SELECT coffee FROM Coffee coffee");
+		try {
 			return q.getResultList();
 		} catch (NoResultException e) {
 			throw new CoffeeNotFoundException();
@@ -34,7 +34,7 @@ public class CoffeeDataAccessProductionVersion implements CoffeeDataAccess {
 	@Override
 	public List<Coffee> getCoffeeByName(String productName) throws CoffeeNotFoundException {
 		String wildcard = "%" + productName + "%";
-		Query q = em.createQuery("select coffee from Coffee coffee where productName like :productName");
+		Query q = em.createQuery("SELECT coffee FROM Coffee coffee WHERE productName LIKE :productName");
 		q.setParameter("productName", wildcard);
 		try {
 			return q.getResultList();
@@ -42,19 +42,25 @@ public class CoffeeDataAccessProductionVersion implements CoffeeDataAccess {
 			throw new CoffeeNotFoundException();
 		}
 	}
-	
+
 	@Override
 	public void removeCoffee(int id) {
-		Query q = em.createQuery("delete from Coffee coffee where id= :id");
+		Query q = em.createQuery("DELETE FROM Coffee coffee WHERE id= :id");
 		q.setParameter("id", id);
 		q.executeUpdate();
 	}
 
 	@Override
-	public void updateCoffee(int id) {
-		// TODO Auto-generated method stub
-
+	public void updateCoffee(int id, Coffee updatedCoffee) {
+		Query q = em.createQuery("UPDATE Coffee SET productName= :productName, brand= :brand, roasting= :roasting, "
+				+ "description= :description, price= :price WHERE id= :id");
+		q.setParameter("id", id)
+		.setParameter("productName", updatedCoffee.getProductName())
+		.setParameter("brand", updatedCoffee.getBrand())
+		.setParameter("roasting", updatedCoffee.getRoasting())
+		.setParameter("description", updatedCoffee.getDescription())
+		.setParameter("price", updatedCoffee.getPrice());
+		q.executeUpdate();
 	}
-
 
 }
