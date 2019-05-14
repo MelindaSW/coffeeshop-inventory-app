@@ -1,9 +1,9 @@
 new Vue ({
 
-  el: 'app',
+  el: '#app',
 
   data: {
-    productName: null,
+    products: [],
     brand: null,
     roasting: null,
     description: null,
@@ -14,12 +14,19 @@ new Vue ({
   fetch('http://localhost:8080/webapp/resources/cbt')
     .then(response => response.json())
     .then(result => {
-      this.productName = result
+      this.products = result
     })
   },
 
   methods: {
-    addCity() {
+    getCoffeeList() {
+      fetch('http://localhost:8080/webapp/resources/cbt')
+        .then(response => response.json())
+        .then(result => {
+          this.products = result
+        })
+    },
+    addCoffee() {
       fetch('http://localhost:8080/webapp/resources/cbt', {
         body: JSON.stringify({
           "productName": this.name ,
