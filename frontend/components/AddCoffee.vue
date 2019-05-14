@@ -50,14 +50,31 @@
         </div>
       </div>
 
-      <input class="button is-primary" name="add" value="Submit">
+      <input @click="submitCoffee" class="button is-primary" name="add" value="Submit">
   </div>
 </div>
 </template>
 
 <script>
-export default {
-}
+
+   export default {
+      data() {
+         return {
+            productName: '',
+            brand: '',
+            roasting: '',
+            description: '',
+            price: '',
+            stockBalance: ''
+         }
+      },
+      methods: {
+         submitCoffee() {
+
+         }
+      }
+   }
+
 </script>
 
 <style lang="css" scoped>
