@@ -1,6 +1,5 @@
 package com.cbt.coffeemanagement.dataaccess;
 
-import java.sql.ResultSet;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -63,12 +62,13 @@ public class CoffeeDataAccessProductionVersion implements CoffeeDataAccess {
 	@Override
 	public void updateCoffee(int id, Coffee updatedCoffee) throws CoffeeNotFoundException {
 		Query q = em.createQuery("UPDATE Coffee SET productName= :productName, brand= :brand, roasting= :roasting, "
-				+ "description= :description, price= :price WHERE id= :id");
+				+ "description= :description, price= :price, stockBalance= :stockBalance WHERE id= :id");
 		q.setParameter("id", id).setParameter("productName", updatedCoffee.getProductName())
 				.setParameter("brand", updatedCoffee.getBrand())
 				.setParameter("roasting", updatedCoffee.getRoasting())
 				.setParameter("description", updatedCoffee.getDescription())
-				.setParameter("price", updatedCoffee.getPrice());
+				.setParameter("price", updatedCoffee.getPrice())
+				.setParameter("stockBalance", updatedCoffee.getStockBalance());
 		try {
 			int nrOfUpdates = q.executeUpdate();
 			if (nrOfUpdates < 1) {
