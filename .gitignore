@@ -1,3 +1,5 @@
+serverside/database/*
+serverside/database/
 /target/
 */target/*
 */target/
