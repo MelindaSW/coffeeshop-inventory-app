@@ -38,12 +38,7 @@ public class CoffeeDataAccessProductionVersion implements CoffeeDataAccess {
 		Query q = em.createQuery("SELECT coffee FROM Coffee coffee WHERE productName LIKE :productName");
 		q.setParameter("productName", wildcard);
 		try {
-			List<Coffee> result = q.getResultList();
-			if(result.size() < 1) {
-				throw new CoffeeNotFoundException();
-			} else {
-				return result;
-			}
+			return q.getResultList();
 		} catch (Exception e) {
 			System.err.println(e);
 			throw new CoffeeNotFoundException();
@@ -56,7 +51,7 @@ public class CoffeeDataAccessProductionVersion implements CoffeeDataAccess {
 		q.setParameter("id", id);
 		try {
 			int nrOfDeletes = q.executeUpdate();
-			if(nrOfDeletes < 1) {
+			if (nrOfDeletes < 1) {
 				throw new CoffeeNotFoundException();
 			}
 		} catch (Exception e) {
@@ -69,15 +64,14 @@ public class CoffeeDataAccessProductionVersion implements CoffeeDataAccess {
 	public void updateCoffee(int id, Coffee updatedCoffee) throws CoffeeNotFoundException {
 		Query q = em.createQuery("UPDATE Coffee SET productName= :productName, brand= :brand, roasting= :roasting, "
 				+ "description= :description, price= :price WHERE id= :id");
-		q.setParameter("id", id)
-		.setParameter("productName", updatedCoffee.getProductName())
-		.setParameter("brand", updatedCoffee.getBrand())
-		.setParameter("roasting", updatedCoffee.getRoasting())
-		.setParameter("description", updatedCoffee.getDescription())
-		.setParameter("price", updatedCoffee.getPrice());
+		q.setParameter("id", id).setParameter("productName", updatedCoffee.getProductName())
+				.setParameter("brand", updatedCoffee.getBrand())
+				.setParameter("roasting", updatedCoffee.getRoasting())
+				.setParameter("description", updatedCoffee.getDescription())
+				.setParameter("price", updatedCoffee.getPrice());
 		try {
 			int nrOfUpdates = q.executeUpdate();
-			if(nrOfUpdates < 1) {
+			if (nrOfUpdates < 1) {
 				throw new CoffeeNotFoundException();
 			}
 		} catch (Exception e) {
