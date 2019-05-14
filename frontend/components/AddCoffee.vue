@@ -46,7 +46,10 @@
 
          <input id="submitbutton" @click="submitCoffee" class="button is-primary" name="add" value="Submit">
 
-         <div class="">
+         <div v-if="message.length > 0">
+            <!-- <figure class="image">
+               <img src="../media/happy-bean.jpg">
+            </figure> -->
             {{ this.message }}
          </div>
      </div>
