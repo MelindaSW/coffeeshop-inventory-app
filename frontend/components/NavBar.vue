@@ -64,8 +64,12 @@ export default {}
 
   .navbar {
     background-color: #37586f;
+    box-shadow: 5px 5px 20px rgba(0,0,0, 0.3);
   }
   a {
+    color: black;
+  }
+  a:hover {
     color: black;
   }
 </style>

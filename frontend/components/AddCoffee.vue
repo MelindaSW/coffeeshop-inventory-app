@@ -87,7 +87,7 @@
 
                fetch('http://localhost:8080/webapp/resources/cbt', {
                   body: JSON.stringify({
-                   "productName": this.name ,
+                   "productName": this.productName,
                    "brand": this.brand,
                    "roasting": this.roasting,
                    "description": this.description,
@@ -111,6 +111,7 @@
 
 <style lang="css" scoped>
    h1 {
+      margin-top: 3rem;
       padding: 2rem 0rem 2rem 0rem;
       color: #f5efeb;
    }
@@ -123,4 +124,3 @@
    }
 
 </style>
-
