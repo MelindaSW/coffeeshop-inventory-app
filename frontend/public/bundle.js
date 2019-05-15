@@ -307,7 +307,7 @@ eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loa
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\\nimg[data-v-0957edea] {\\n  margin: 10px 20px 10px 30px;\\n}\\nrouter-link[data-v-0957edea] {\\n  color: #f5efeb;\\n}\\nrouter-link[data-v-0957edea]:visited {\\n  color: black;\\n}\\nrouter-link[data-v-0957edea]:active {\\n  color: black;\\n}\\n.navbar-item[data-v-0957edea] {\\n  font-size: 1.2rem;\\n}\\n#brand-header[data-v-0957edea]  {\\n  color: #f5efeb;\\n  font-weight: bold;\\n  margin-right: 30px;\\n}\\n#brand-header[data-v-0957edea]:hover {\\n  color: black;\\n}\\n.navbar[data-v-0957edea] {\\n  background-color: #37586f;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./components/NavBar.vue?./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib??vue-loader-options");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\\nimg[data-v-0957edea] {\\n  margin: 10px 20px 10px 30px;\\n}\\nrouter-link[data-v-0957edea] {\\n  color: #f5efeb;\\n}\\nrouter-link[data-v-0957edea]:visited {\\n  color: black;\\n}\\nrouter-link[data-v-0957edea]:active {\\n  color: black;\\n}\\n.navbar-item[data-v-0957edea] {\\n  font-size: 1.2rem;\\n}\\n#brand-header[data-v-0957edea]  {\\n  color: #f5efeb;\\n  font-weight: bold;\\n  margin-right: 30px;\\n}\\n/* #brand-header:hover {\\n  color: black;\\n} */\\n.navbar[data-v-0957edea] {\\n  background-color: #37586f;\\n}\\na[data-v-0957edea] {\\n  color: black;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./components/NavBar.vue?./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -400,7 +400,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n\n/* 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n\n//# sourceURL=webpack:///./components/NavBar.vue?./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n\n//# sourceURL=webpack:///./components/NavBar.vue?./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 

@@ -13,17 +13,14 @@
 
         <a class="navbar-item">
           <router-link to="/">Home</router-link>
-          </li>
         </a>
 
         <a class="navbar-item">
           <router-link to="/add">Add Coffee</router-link>
-          </li>
         </a>
 
         <a class="navbar-item">
           <router-link to="/edit">Edit Coffee</router-link>
-          </li>
         </a>
 
 
@@ -61,11 +58,14 @@ export default {}
     font-weight: bold;
     margin-right: 30px;
   }
-  #brand-header:hover {
+  /* #brand-header:hover {
     color: black;
-  }
+  } */
 
   .navbar {
     background-color: #37586f;
+  }
+  a {
+    color: black;
   }
 </style>
