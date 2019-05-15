@@ -29,7 +29,7 @@
 
    h1 {
       color: #f5efeb;
-      margin-top: 3rem;
+      margin-top: 4rem;
       font-size: 5rem;
    }
 
